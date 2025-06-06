@@ -94,7 +94,7 @@ The Excel sheet will look like:
 
 | S.No | Enrollment | Name         | Semester | BT101 | BT102 | ... | SGPA | CGPA | Result              |
 | ---- | ---------- | ------------ | -------- | ----- | ----- | --- | ---- | ---- | ------------------- |
-| 1    | 0805CS2410 | AADARSH SONI | 1        | C     | C     | ... | 5.57 | 5.57 | Fail in BT104,BT105 |
+| 1    | 0805CS2410 | XYZ          | 1        | C     | C     | ... | 5.57 | 5.57 | Fail in BT104,BT105 |
 | 2    | 0805CS2411 |              |          | 0     | 0     | ... | 0    | 0    |                     |
 
 ---
@@ -116,10 +116,3 @@ MIT License
 ## 📞 Contact
 
 For support or queries, visit [Moh Technology](https://www.youtube.com/@mohtechnology)
-
-```
-
----
-
-Let me know if you want this converted to a `.md` file or bundled in a project folder.
-```
