@@ -22,7 +22,7 @@ A Python automation tool to fetch and store RGPV B.Tech student results in an Ex
 
 ### 1. 📥 Clone or Download
 ```bash
-git clone https://github.com/yourusername/rgpv-result-fetcher.git
+git clone https://github.com/mohtechnology/RGPV-Result.git
 cd rgpv-result-fetcher
 ````
 
