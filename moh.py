@@ -98,11 +98,13 @@ def save_result_to_excel(soup):
 
     wb.save(file_name)
     print(f"✅ Grades saved in '{file_name}' with proper formatting.")
+    with open("result.html", "w", encoding="utf-8") as f:
+        f.write("")
 
 
 # ========== Main Scraping Function ==========
 
-def fetch_result(enrollment_no, semester, grading=True):
+def fetch_result(program, enrollment_no, semester, grading=True):
     options = webdriver.ChromeOptions()
     options.add_argument('--disable-blink-features=AutomationControlled')
     driver = webdriver.Chrome(options=options)
@@ -111,7 +113,7 @@ def fetch_result(enrollment_no, semester, grading=True):
     try:
         for attempt in range(1, 4):
             driver.get("https://result.rgpv.ac.in/Result/ProgramSelect.aspx")
-            wait.until(EC.element_to_be_clickable((By.ID, "radlstProgram_1"))).click()
+            wait.until(EC.element_to_be_clickable((By.ID, f"radlstProgram_{program-1}"))).click()
             wait.until(EC.presence_of_element_located((By.ID, "ctl00_ContentPlaceHolder1_txtrollno")))
 
             print(f"\n🔄 Attempt #{attempt} for {enrollment_no}")
@@ -167,15 +169,15 @@ def fetch_result(enrollment_no, semester, grading=True):
         driver.quit()
 
 
-def fetch_range(prefix, start, end, semester, grading=True):
+def fetch_range(program, prefix, start, end, semester, grading=True):
     for num in range(start, end + 1):
         enr_no = f"{prefix}{str(num).zfill(3)}"
         print(f"\n📘 Fetching result for: {enr_no}")
-        fetch_result(enr_no, semester, grading)
+        fetch_result(program, enr_no, semester, grading)
 
 
 # ========== Run Batch ==========
 
 
 if __name__ == "__main__":
-    fetch_range(prefix="0403AL24", start=1001, end=1070, semester="1", grading=True)
+    fetch_range(program = 2, prefix="0805cs24", start=1001, end=1050, semester="1", grading=True)
