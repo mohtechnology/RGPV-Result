@@ -61,7 +61,7 @@ sudo apt update
 sudo apt install tesseract-ocr
 ```
 
-### 4. 🌐 Install Chrome WebDriver
+### 4. 🌐 Install Chrome WebDriver (Optional)
 
 * Download: [https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)
 * Match the version with your Chrome browser.
