@@ -3,3 +3,4 @@ pillow
 pytesseract
 requests
 openpyxl
+beautifulsoup4
