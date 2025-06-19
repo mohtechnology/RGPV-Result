@@ -35,6 +35,7 @@ pip install -r requirements.txt
 **requirements.txt**
 
 ```
+beautifulsoup4
 selenium
 pillow
 pytesseract
