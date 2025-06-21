@@ -47,7 +47,7 @@ openpyxl
 
 #### For Windows
 
-* Download from: [https://github.com/tesseract-ocr/tesseract/releases/download/5.5.0/tesseract-ocr-w64-setup-5.5.0.20241111.exe](https://github.com/tesseract-ocr/tesseract/releases/download/5.5.0/tesseract-ocr-w64-setup-5.5.0.20241111.exe)
+* Download from: [tesseract-ocr-w64-setup-5.5.0.20241111.exe](https://github.com/tesseract-ocr/tesseract/releases/download/5.5.0/tesseract-ocr-w64-setup-5.5.0.20241111.exe)
 * Install and note the path (e.g., `C:\Program Files\Tesseract-OCR\tesseract.exe`)
 * Add the path in your code:
 
