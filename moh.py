@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, UnexpectedAlertPresentException
+from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter
@@ -53,6 +53,8 @@ def save_result_to_excel(soup):
         for row in table.find_all("tr"):
             cols = row.find_all("td")
             if len(cols) == 4:
+                if cols[0].text.strip() == "Name" or cols[0].text.strip() == "Course" or cols[0].text.strip() == "Semester":
+                    continue
                 subjects[cols[0].text.strip()] = cols[3].text.strip()
 
     if not student_info["name"]:  # If result not found
@@ -60,7 +62,7 @@ def save_result_to_excel(soup):
         subjects = {}
 
     # Excel saving
-    file_name = "RGPV_Grades_Clean.xlsx"
+    file_name = "RGPV_Result.xlsx"
     sheet_name = "Results"
 
     if os.path.exists(file_name):
@@ -140,7 +142,7 @@ def fetch_result(program, enrollment_no, semester, grading=True):
 
             print(f"🔍 CAPTCHA: {captcha_text}")
             driver.find_element(By.ID, "ctl00_ContentPlaceHolder1_TextBox1").send_keys(captcha_text)
-            time.sleep(5)
+            time.sleep(3)
             driver.find_element(By.ID, "ctl00_ContentPlaceHolder1_btnviewresult").click()
             time.sleep(0.5)
 
