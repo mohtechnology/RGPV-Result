@@ -106,11 +106,6 @@ The Excel sheet will look like:
 * Make sure your browser & WebDriver versions match.
 * Use real enrollment numbers for accurate testing.
 
----
-
-## 📜 License
-
-MIT License
 
 ---
 
