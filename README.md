@@ -80,7 +80,7 @@ driver = webdriver.Chrome(executable_path='path/to/chromedriver')
 2. Run the script:
 
 ```bash
-python new.py
+python moh.py
 ```
 
 3. Results will be saved in `results.xlsx`.
