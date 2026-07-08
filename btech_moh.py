@@ -109,6 +109,7 @@ def save_result_to_excel(soup):
 def fetch_result(program, enrollment_no, semester, grading=True):
     options = webdriver.ChromeOptions()
     options.add_argument('--disable-blink-features=AutomationControlled')
+    options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
     wait = WebDriverWait(driver, 20)
 
@@ -142,7 +143,7 @@ def fetch_result(program, enrollment_no, semester, grading=True):
 
             print(f"🔍 CAPTCHA: {captcha_text}")
             driver.find_element(By.ID, "ctl00_ContentPlaceHolder1_TextBox1").send_keys(captcha_text)
-            time.sleep(3)
+            time.sleep(5)
             driver.find_element(By.ID, "ctl00_ContentPlaceHolder1_btnviewresult").click()
             time.sleep(0.5)
 
@@ -182,4 +183,4 @@ def fetch_range(program, prefix, start, end, semester, grading=True):
 
 
 if __name__ == "__main__":
-    fetch_range(program = 2, prefix="0805cs24", start=1001, end=1050, semester="1", grading=True)
+    fetch_range(program = 2, prefix="0805cs25", start=1001, end=1250, semester="1", grading=True)
